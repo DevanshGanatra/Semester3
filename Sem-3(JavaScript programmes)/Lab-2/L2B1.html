@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("ENter two digit no: <br/>");
+        n=parseInt(prompt("ENter a no.: "));
+        if(n>9 && n<100){
+        rem=n%10;
+        n=n/10;
+        document.write(Math.pow(n,rem));
+        }
+        else
+        {
+            document.write("Invalid Input");
+        }
+       
+    </script>
+</body>
+</html>

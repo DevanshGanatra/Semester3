@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      n1 = parseInt(prompt("ENter a no.1: "));
+      n2 = parseInt(prompt("ENter a no.2: "));
+      temp = 0;
+      for (i = 0; i <= Math.min(n1, n2); i++) {
+        if (n1 % i == 0 && n2 % i == 0) {
+          temp = i;
+        }
+      }
+      document.write("GCD of " + n1 + " & " + n2 + " : " + temp);
+    </script>
+  </body>
+</html>

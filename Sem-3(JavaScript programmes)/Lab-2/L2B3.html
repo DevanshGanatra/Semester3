@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      s = prompt("Enter word:");
+      c = prompt("Enter character to find: ");
+      f1 = s.indexOf(c);
+      f2 = s.lastIndexOf(c);
+      document.write("<br/>Found at firstly" + (f1 + 1));
+      document.write("<br/>Found at lastly" + (f2 + 1));
+      document.write("<br/>Remaing string   =" + s.slice(f1 + 1, f2));
+    </script>
+  </body>
+</html>

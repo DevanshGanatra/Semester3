@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         n=parseInt(prompt("ENter a no.: "));
+         a=n;
+         rem=0;
+         sum=0;
+         while(n>0)
+         {
+            rem=n%10;
+            sum+=Math.pow(rem,3);
+            n=n=parseInt(n/10);
+         }
+         if(sum==a)
+         {
+            document.write("Its Armstrong no.");
+         }
+         else{
+            document.write("Its not an Armstrong no. ");
+         }
+    </script>
+</body>
+</html>
