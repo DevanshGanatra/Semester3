@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = parseInt(prompt("Enter a number in range 0 - 999"));
+        console.log(n);
+        if(isNaN(n))
+        alert("Not a number !!");
+        else if(n>999 || n<0)
+        alert("Number out of range!");
+        else {
+            var num = ["one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninety","hundred"];
+            var str = "";
+            if(n%100<=20)
+            str+=num[n%100 -1];
+            else 
+            str+=(num[parseInt((n%100)/10)+17]!=undefined?num[parseInt((n%100)/10)+17]:"")+(num[n%10-1]!=undefined?num[n%10-1]:"");
+            if(parseInt(n/100)>0)
+            str=num[parseInt(n/100)-1]+" hundred "+ str;
+            document.write(str);
+        }
+    </script>
+</body>
+</html>
