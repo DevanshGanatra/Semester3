@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         n = parseInt(prompt("ENter no. of elements of array"))
+         a=[];
+         for(i=0;i<n;i++)
+        {
+            a[i]=parseInt(prompt("Enter value a["+i+"]: "))
+        }
+        a.sort((a,b)=>a-b);//direct a.sort() will be sort alphabatically
+        //a-b returns ascending
+        //b-a returns desending
+        document.write(a);
+    </script>
+</body>
+</html>
