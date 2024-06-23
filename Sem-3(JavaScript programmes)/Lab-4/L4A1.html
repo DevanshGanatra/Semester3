@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+<body>
+    <script>
+        Faculties=[
+            {
+                name:'arjun',
+                age:15,
+                experiance:16,
+                mobileno:1111111111,
+                img:'https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/15---28-04-2023-02-07-35.jpg'
+            },
+            {
+                name:'pradhyuman',
+                age:25,
+                experiance:35,
+                mobileno:1111111112,
+                img:'https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/6---28-04-2023-02-06-07.jpg'
+            },
+            {
+                name:'dhvanik',
+                age:20,
+                experiance:28,
+                mobileno:1111111113,
+                img:'https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/298---18-03-2024-04-24-20.jpg'
+            },
+            {
+                name:'DanaBappa',
+                age:30,
+                experiance:100,
+                mobileno:1111111114,
+                img:'https://www.hindustantimes.com/ht-img/img/2024/01/12/550x309/Hrithik_Roshan_1705054520764_1705054529579.jpg'
+            }
+        ]
+
+        for( i=0;i<Faculties.length;i++){
+            document.write('<div class="card" style="width: 18rem;">') 
+            document.write(' <div class="card-body">')  
+            document.write('<h5 class="card-title">Faculty-'+(i+1)+'</h5>') 
+            document.write('<img src="'+Faculties[i].img+'" class="card-img-top" alt="...">') 
+            document.write('<p class="card-text">Name : '+Faculties[i].name+'</p>')  
+            document.write('<p class="card-text">Experience : '+Faculties[i].experiance+'</p>')  
+            document.write('<p class="card-text">MobileNo. : '+Faculties[i].mobileno+'</p>')  
+            document.write('</div></div>')
+        }
+    </script>
+</body>
+</html>

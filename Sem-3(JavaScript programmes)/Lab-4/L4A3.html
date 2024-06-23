@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+    <script>
+         Students=[
+            {
+                name:'arjun',
+                age:15,
+                Branch:'cse',
+                enrollmentno:1111111111,
+                mobileno:91919191914,
+                img:'https://du-website.s3.ap-south-1.amazonaws.com/U01/PlacementNews/258/Slide2-Attachment-2024-04-24-013402.png'
+            },
+            {
+                name:'pragati',
+                age:25,
+                Branch:'cse',
+                enrollmentno:1111111111,
+                mobileno:91919191914,
+                img:'https://du-website.s3.ap-south-1.amazonaws.com/U01/PlacementNews/278/Slide40-Attachment-2024-04-26-032656.png'
+            },
+            {
+                name:'diviya',
+                age:20,
+                Branch:'civil',
+                enrollmentno:1111111111,
+                mobileno:91919191914,
+                img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREbJx42MxnH15prQtPnuC4QsszEduZ1ZdEIz3MqU2VyQlieLVnax3gL3H25x0u-ifHuX4&usqp=CAU'
+            },
+            {
+                name:'DanaBappa',
+                age:30,
+                Branch:'mechanical',
+                enrollmentno:1111111111,
+                mobileno:91919191914,
+                img:'https://media.licdn.com/dms/image/C4D22AQGZBYu-mCOEAg/feedshare-shrink_2048_1536/0/1675491750398?e=2147483647&v=beta&t=-7cLfZvkajcnNqSDhjTln0YIa7_uFO6_J2pj-iHBoEs'
+            }
+        ]
+        for( i=0;i<Students.length;i++){
+            document.write('<div class="card" style="width: 18rem;">') 
+            document.write(' <div class="card-body">')  
+            document.write('<h5 class="card-title">Students-'+(i+1)+'</h5>') 
+            document.write('<img src="'+Students[i].img+'" class="card-img-top" alt="...">') 
+            document.write('<p class="card-text">Name : '+Students[i].name+'</p>')  
+            document.write('<p class="card-text">Experience : '+Students[i].Branch+'</p>')  
+            document.write('<p class="card-text">MobileNo. : '+Students[i].enrollmentno+'</p>') 
+            document.write('<p class="card-text">MobileNo. : '+Students[i].mobileno+'</p>')  
+            document.write('</div></div>')
+        }
+    </script>
+</body>
+</html>
