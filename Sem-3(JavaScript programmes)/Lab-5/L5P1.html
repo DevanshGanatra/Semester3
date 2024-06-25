@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .calculator {
+            background-color: #ffffff ;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .calculator input[type="text"] {
+            height: 60px;
+            font-size: 24px;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .calculator input[type="button"] {
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator p-4">
+        <table class="table">
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="ans" class="form-control" value="" readonly>
+                </td>
+            </tr>
+           <tr>
+            <td><input type="button" class="btn btn-outline-success" value="7" onclick="addNo('7')"></td>
+            <td><input type="button" class="btn btn-outline-success" value="8" onclick="addNo('8')"></td>
+            <td><input type="button" class="btn btn-outline-success" value="9" onclick="addNo('9')"></td>
+            <td><input type="button" class="btn btn-outline-success" value="+" onclick="addNo('+')"></td>
+           </tr>
+           <tr>
+            <td><input type="button" class="btn btn-outline-success" value="4" onclick="addNo('4')"></td>
+            <td><input type="button" class="btn btn-outline-success" value="5" onclick="addNo('5')"></td>
+            <td><input type="button" class="btn btn-outline-success" value="6" onclick="addNo('6')"></td>
+            <td><input type="button" class="btn btn-outline-success" value="-" onclick="addNo('-')"></td>
+           </tr>
+           <tr>
+            <td><input type="button" class="btn btn-outline-success" value="1" onclick="addNo('1')"></td>
+            <td><input type="button" class="btn btn-outline-success" value="2" onclick="addNo('2')"></td>
+            <td><input type="button" class="btn btn-outline-success" value="3" onclick="addNo('3')"></td>
+            <td><input type="button" class="btn btn-outline-success" value="*" onclick="addNo('*')"></td>
+           </tr>
+           <tr>
+            <td><input type="button" class="btn btn-outline-danger" value="C" onclick="clearAll()"></td>
+            <td><input type="button" class="btn btn-outline-success" value="0" onclick="addNo('0')"></td>
+            <td><input type="button" class="btn btn-outline-primary" value="=" onclick="result()"></td>
+            <td><input type="button" class="btn btn-outline-success" value="/" onclick="addNo('/')"></td>
+           </tr>
+        </table>
+    </div>
+    <script>
+        function addNo(value) {
+            let ans = document.getElementById("ans");
+            ans.value += value;
+        }
+
+        function clearAll() {
+            let clear = document.getElementById("ans");
+            clear.value = "";
+        }
+
+        function result() {
+            let final = document.getElementById("ans");
+            try {
+                let ans = eval(final.value);
+                final.value = ans;
+            } catch (e) {
+                final.value = "Error";
+            }
+        }
+    </script>
+</body>
+</html>
