@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function handleMouseClick(event) {
+        // Check which button was clicked
+        switch (event.button) {
+          case 0:
+            alert("Left Clicked");
+            break;
+          case 2:
+            alert("Right Clicked");
+            break;
+          default:
+            // Handle other mouse buttons if needed
+            break;
+        }
+      }
+
+      // Add event listener to handle mouse clicks on the document
+      document.addEventListener("mousedown", handleMouseClick);
+    </script>
+  </body>
+</html>

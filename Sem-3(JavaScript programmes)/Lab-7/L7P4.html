@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //eg-1
+        studentBasic={
+            name:"Devansh",
+            surname:"Ganatra",
+            age:19
+        }
+        studentAddress={
+            city:"Rajkot",
+            state:"Gujarat"
+        }
+        parentDetail={
+            Fathername:"Bharatbhai",
+            FatherMobileNumber:9928251652
+        }
+        student={
+            ...studentBasic,
+            ...studentAddress,
+            ...parentDetail
+        }
+           console.log(student);
+      //eg-2
+      student1={
+           name:"Devansh",
+           branch:"CSE",
+           sem:3
+        }
+        student2={
+            ...student1,name:"Sahil"
+        }
+          console.log(student1);
+          console.log(student2);
+    </script>
+</body>
+</html>

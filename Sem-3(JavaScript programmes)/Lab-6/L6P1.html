@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="changebg()">
+        click here
+    </button>
+    <script>
+        function changebg(){
+            let r=parseInt(Math.random()*255)
+            let g=parseInt(Math.random()*255)
+            let b=parseInt(Math.random()*255)
+            document.body.style.background= "rgb("+r+","+g+","+b+")";
+        }
+    </script>
+</body>
+</html>

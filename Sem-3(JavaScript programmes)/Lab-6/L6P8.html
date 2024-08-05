@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head" onmouseover="headCalled()" onmouseout="headUnCalled()">Heading</h1>
+    <button onclick="fidTime()">Show Time</button>
+    <span id="fndtime"></span>
+    <button onclick="turnRed()">Set Red</button>
+    <button onclick="turnGreen()">Set Green</button>
+    <script>
+        function headCalled() {
+            document.body.style.background = "yellow";
+            document.getElementById("head").style.color = "black";  
+            document.getElementById("fndtime").style.color = "black";   
+        }
+        function headUnCalled() {
+            document.body.style.background = "black";
+            document.getElementById("head").style.color = "white";
+            document.getElementById("fndtime").style.color = "white";              
+        }
+        function fidTime() {
+            let dt = new Date();
+            document.getElementById('fndtime').innerHTML = dt;
+            setInterval(fidTime,1000);
+        }
+        function turnRed(){
+            document.body.style.background = "Red";
+            document.getElementById("head").style.color = "white";
+            document.getElementById("fndtime").style.color = "white";  
+        }
+        function turnGreen(){
+            document.body.style.background = "Green";
+            document.getElementById("head").style.color = "white";
+            document.getElementById("fndtime").style.color = "white";  
+        }
+    </script>
+</body>
+</html>

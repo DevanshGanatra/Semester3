@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Define a class called Circle
+      class Circle {
+        // Constructor to initialize the Circle object with a radius
+        constructor(radius) {
+          this.radius = radius;
+        }
+
+        // Method to calculate the area of the circle
+        calculateArea() {
+          return Math.PI * this.radius * this.radius;
+        }
+
+        // Method to calculate the circumference of the circle
+        calculateCircumference() {
+          return 2 * Math.PI * this.radius;
+        }
+      }
+
+      // Create an instance of the Circle class
+      const circle1 = new Circle(5);
+
+      // Call methods on the circle instance
+      console.log("Radius:", circle1.radius); // Output: Radius: 5
+      console.log("Area:", circle1.calculateArea()); // Output: Area: 78.53981633974483
+      console.log("Circumference:", circle1.calculateCircumference()); // Output: Circumference: 31.41592653589793
+    </script>
+  </body>
+</html>

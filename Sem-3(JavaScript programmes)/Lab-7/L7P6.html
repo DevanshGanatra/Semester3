@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const faculties = [
+            {
+                firstName: "John",
+                lastName: "Doe",
+                age: 45,
+                department: "Computer Science",
+                email: "john.doe@example.com",
+            },
+            {
+                firstName: "Jane",
+                lastName: "Smith",
+                age: 38,
+                department: "Mathematics",
+                email: "jane.smith@example.com",
+            },
+            {
+                firstName: "Alice",
+                lastName: "Johnson",
+                age: 50,
+                department: "Physics",
+                email: "alice.johnson@example.com",
+            },
+            {
+                firstName: "Robert",
+                lastName: "Brown",
+                age: 60,
+                department: "Chemistry",
+                email: "robert.brown@example.com",
+            },
+            {
+                firstName: "Emily",
+                lastName: "Davis",
+                age: 32,
+                department: "Biology",
+                email: "emily.davis@example.com",
+            }
+        ];
+        
+        // Use destructuring within the loop
+        for ( fac of faculties) {
+            const { firstName, lastName } = fac;
+            document.write(firstName + " " + lastName + "<br>");
+        }
+    </script>
+</body>
+</html>

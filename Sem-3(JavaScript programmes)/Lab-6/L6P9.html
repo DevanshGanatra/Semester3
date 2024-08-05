@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Press any Key</h1>
+    <span id="txt"></span>
+    <script>
+        document.addEventListener('keydown', (e) => {
+            if ('aeiouAEIOU'.includes(e.key)) {
+                document.getElementById('txt').innerHTML = "Vowel is Pressed: " + e.key;
+            }
+        });
+        document.addEventListener('keyup', () => {
+            document.body.style.backgroundColor = 'blue';
+        });
+    </script>
+</body>
+</html>

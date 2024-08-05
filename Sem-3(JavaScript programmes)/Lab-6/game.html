@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playful Adventure Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            background-color: #87CEEB;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const player = {
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            size: 30,
+            color: 'red',
+            speed: 5
+        };
+
+        const star = {
+            x: Math.random() * (canvas.width - 20) + 10,
+            y: Math.random() * (canvas.height - 20) + 10,
+            size: 20,
+            color: 'yellow'
+        };
+
+        const treasure = {
+            x: canvas.width - 70,
+            y: canvas.height - 70,
+            size: 50,
+            color: 'gold'
+        };
+
+        const keys = {
+            ArrowUp: false,
+            ArrowDown: false,
+            ArrowLeft: false,
+            ArrowRight: false
+        };
+
+        let score = 0;
+
+        document.addEventListener('keydown', (event) => {
+            if (keys.hasOwnProperty(event.key)) {
+                keys[event.key] = true;
+            }
+        });
+
+        document.addEventListener('keyup', (event) => {
+            if (keys.hasOwnProperty(event.key)) {
+                keys[event.key] = false;
+            }
+        });
+
+        function update() {
+            if (keys.ArrowUp && player.y > 0) {
+                player.y -= player.speed;
+            }
+            if (keys.ArrowDown && player.y < canvas.height - player.size) {
+                player.y += player.speed;
+            }
+            if (keys.ArrowLeft && player.x > 0) {
+                player.x -= player.speed;
+            }
+            if (keys.ArrowRight && player.x < canvas.width - player.size) {
+                player.x += player.speed;
+            }
+
+            // Check for collision with star
+            if (Math.abs(player.x - star.x) < player.size && Math.abs(player.y - star.y) < player.size) {
+                score++;
+                star.x = Math.random() * (canvas.width - 20) + 10;
+                star.y = Math.random() * (canvas.height - 20) + 10;
+            }
+
+            // Check for collision with treasure
+            if (Math.abs(player.x - treasure.x) < player.size && Math.abs(player.y - treasure.y) < player.size) {
+                alert('Congratulations! You found the treasure!');
+                score = 0; // Reset score
+                player.x = canvas.width / 2;
+                player.y = canvas.height / 2;
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw player
+            ctx.fillStyle = player.color;
+            ctx.fillRect(player.x, player.y, player.size, player.size);
+
+            // Draw star
+            ctx.fillStyle = star.color;
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Draw treasure
+            ctx.fillStyle = treasure.color;
+            ctx.fillRect(treasure.x, treasure.y, treasure.size, treasure.size);
+
+            // Draw score
+            ctx.fillStyle = 'black';
+            ctx.font = '20px Arial';
+            ctx.fillText('Score: ' + score, 10, 20);
+        }
+
+        function gameLoop() {
+            update();
+            draw();
+            requestAnimationFrame(gameLoop);
+        }
+
+        gameLoop();
+    </script>
+</body>
+</html>

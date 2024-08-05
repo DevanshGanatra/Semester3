@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="demo">
+    <script>
+        function printSum(sum){
+            document.getElementById("demo").value= sum;
+        }
+        function mycalC(num1,num2, myCallback){
+            let sum=num1+num2;
+            myCallback(sum);
+        }
+        mycalC(5,5,printSum);
+    </script>
+  </body>
+</html>
